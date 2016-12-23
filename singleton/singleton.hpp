@@ -12,6 +12,7 @@ public:
         if (m_pInstance == NULL)
         {
             std::mutex lock;
+            lock.lock();
             if (m_pInstance == NULL)
             {
                 m_pInstance = new(std::nothrow) T();
